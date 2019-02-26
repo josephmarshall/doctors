@@ -1,0 +1,14 @@
+<h1><%= @patient.full_name ? "Edit " : "Create New " %>patient</h1>
+<%= form_with(model: @patient, local: true, class: "ui form") do |f| %>
+<%= f.label :first_name %>
+<%= f.text_field :first_name %>
+<%= f.label :last_name %>
+<%= f.text_field :last_name %>
+<%= f.label :age %>
+<%= f.number_field :age %>
+<%= f.label :gender %>
+<%= f.select :gender, ["XX", "XY"] %>
+<%= f.submit %>
+<% end %>
+
+
