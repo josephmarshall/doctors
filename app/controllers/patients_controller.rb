@@ -2,7 +2,7 @@ class PatientsController < ApplicationController
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
 
   def index
-    @patients = Patient.all
+    @patients = Patient.all.sort_by { |n| n.first_name }
   end
 
   def show
@@ -36,6 +36,7 @@ class PatientsController < ApplicationController
 
   def destroy
     @patient.destroy
+    redirect_to patients_path
   end
 
   private

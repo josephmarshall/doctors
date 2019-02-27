@@ -1,14 +1,14 @@
-<h1><%= @doctor.full_name ? "Edit " : "Create New " %>Doctor</h1>
-<%= form_with(model: @doctor, local: true, class: "ui form") do |f| %>
-<%= f.label :first_name %>
-<%= f.text_field :first_name %>
-<%= f.label :last_name %>
-<%= f.text_field :last_name %>
-<%= f.label :specialty %>
-<%= f.text_field :specialty %>
-<%= f.label :age %>
-<%= f.number_field :age %>
-<%= f.submit %>
+<h1><%= @doctor.first_name ? "Edit " : "New " %>Doctor</h1>
+<div class="form_input"><%= form_with(model: @doctor, local: true, class: "ui form") do |f| %><?div>
+<div class="form_input_label"><%= f.label :first_name %></div>
+<div class="form_input"><%= f.text_field :first_name %></div>
+<div class="form_input_label"><%= f.label :last_name %></div>
+<div class="form_input"><%= f.text_field :last_name %></div>
+<div class="form_input_label"><%= f.label :specialty %></div>
+<div class="form_input"><%= f.text_field :specialty %></div>
+<div class="form_input_label"><%= f.label :age %></div>
+<div class="form_input"><%= f.number_field :age %></div>
+<div class="form_input"><%= f.submit %></div>
 <% end %>
 
 

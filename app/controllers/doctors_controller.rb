@@ -2,7 +2,7 @@ class DoctorsController < ApplicationController
   before_action :set_doctor, only: [:show, :edit, :update, :destroy]
 
   def index
-    @doctors = Doctor.all
+    @doctors = Doctor.all.sort_by { |n| n.first_name }
   end
 
   def show
@@ -28,7 +28,7 @@ class DoctorsController < ApplicationController
 
   def update
     if @doctor.update(doctor_params)
-      redirect_to doctors_path
+      redirect_to doctor_path(@doctor)
     else
       render :edit
     end
@@ -36,6 +36,7 @@ class DoctorsController < ApplicationController
 
   def destroy
     @doctor.destroy
+    redirect_to doctors_path
   end
 
   private

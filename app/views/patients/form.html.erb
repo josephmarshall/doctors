@@ -1,14 +1,17 @@
-<h1><%= @patient.full_name ? "Edit " : "Create New " %>patient</h1>
-<%= form_with(model: @patient, local: true, class: "ui form") do |f| %>
-<%= f.label :first_name %>
-<%= f.text_field :first_name %>
-<%= f.label :last_name %>
-<%= f.text_field :last_name %>
-<%= f.label :age %>
-<%= f.number_field :age %>
-<%= f.label :gender %>
-<%= f.select :gender, ["XX", "XY"] %>
-<%= f.submit %>
-<% end %>
+<h1><%= @patient.first_name ? "Edit " : "New " %>Patient</h1>
+<div>
+<div class="form_input"><%= form_with(model: @patient, local: true, class: "ui-form") do |f| %></div>
+<div class="form_input_label"><%= f.label :first_name %></div>
+<div class="form_input"><%= f.text_field :first_name %></div>
+<div class="form_input_label"><%= f.label :last_name %></div>
+<div class="form_input"><%= f.text_field :last_name %></div>
+<div class="form_input_label"><%= f.label :age %></div>
+<div class="form_input"><%= f.number_field :age %></div>
+<div class="form_input_label"><%= f.label :gender, "Chromosomes: " %>
+<span class="custom_select"><%= f.select :gender, ["XX", "XY"], class: "select" %></span></div>
+<br />
+<div class="form_input"><%= f.submit %></div>
+<div class="form_input"><% end %>
+</div>
 
 
