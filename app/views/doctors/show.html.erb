@@ -3,9 +3,11 @@
 <h3>Age: <%= @doctor.age %>
 <h3>Contact Information: </h3>
 <h4>
-<%= link_to "Edit Doctor", edit_doctor_path(@doctor), class: "links" %>
-<%= link_to "Delete Doctor", doctor_path(@doctor), method: :delete, class: "links" %>
+<div><%= button_to "Edit Doctor", edit_doctor_path(@doctor), method: :get %></div>
+<br />
+<div><%= button_to "Delete Doctor", doctor_path(@doctor), method: :delete %></div>
 </h4>
 <hr />
-<h4><%= link_to "Appointments for Dr. #{@doctor.full_name}", doctor_appointments_path(@doctor), class: "links" %>
+<h4><%= link_to "Appointments for Dr. #{@doctor.full_name}", doctor_appointments_path(@doctor), method: :get, class: "links" %>
 </h4>
+

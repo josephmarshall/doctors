@@ -1,13 +1,15 @@
 <h1>Appointments for Dr. <%= @doctor.full_name %></h1>
+<%= button_to "New Appointment", new_doctor_appointment_path(@doctor), method: :get %>
+<br />
+<hr />
 <% @appointments.each do |appointment| %>
 <div>
   <div>Patient: <%= appointment.patient.full_name %></div>
   <div>Date/Time: <%= appointment.dateTime %></div>
   <div>Location: <%= appointment.location %></div>
-  <div><%= link_to "Cancel Appointment", doctor_appointment_path(@doctor, appointment), method: :delete %></div>
+  <div><%= button_to "Cancel Appointment", doctor_appointment_path(@doctor, appointment), method: :delete %></div>
 </div>
 <br />
 <% end %>
 <hr />
-<%= link_to "New Appointment", new_doctor_appointment_path(@doctor) %>
 
